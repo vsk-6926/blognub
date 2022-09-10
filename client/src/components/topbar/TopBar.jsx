@@ -53,7 +53,7 @@ const Topbar = () => {
       <div className="topcenter">
         <ul className="topList">
           <li className="listItem">
-            <Link to="/">Home</Link>
+            <Link to="https://blognub.herokuapp.com/">Home</Link>
           </li>
           <li className="listItem">
             <Link to="">About</Link>
