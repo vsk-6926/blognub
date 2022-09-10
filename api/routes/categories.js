@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Category = require("../models/Category");
 
 //Category
-router.post("/", async (req,res) => {
+router.post("https://blognub.herokuapp.com/", async (req,res) => {
     const newCat = new Category(req.body);
     try{
         const savedCat = await newCat.save();
@@ -14,7 +14,7 @@ router.post("/", async (req,res) => {
 });
 
 //All Categories
-router.get("/", async (req,res) => {
+router.get("https://blognub.herokuapp.com/", async (req,res) => {
     try{
         const cats = await Category.find();
         res.status(200).json(cats);
