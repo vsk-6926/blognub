@@ -13,7 +13,7 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -41,6 +41,17 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoriesRoute);
+
+//---------Deployment---------------
+
+__dirname = path.resolve();
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static(path.join(__dirname, '/client/build')));
+
+  app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'client','build', 'index.html'))
+  });
+}
 
 app.listen(PORT, () => {
   console.log("Backend is running");
