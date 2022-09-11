@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/vsk-6926/blognub/issues"
   },
-  "homepage": "https://github.com/vsk-6926/blognub#readme"
+  "homepage": "https://github.com/vsk-6926/blognub#readme",
+  "dependencies": {
+    "node": "^18.9.0"
+  }
 }
