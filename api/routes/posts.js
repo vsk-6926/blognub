@@ -3,7 +3,7 @@ const User = require("../models/User");
 const Post = require("../models/Post");
 
 //Create Post
-router.post("/", async (req, res) => {
+router.post("https://blognub.herokuapp.com/", async (req, res) => {
   console.log(req.body);
   const newPost = new Post(req.body);
   try {
@@ -67,7 +67,7 @@ router.get("/:id", async (req, res) => {
 });
 
 //Get All Posts
-router.get("/", async (req, res) => {
+router.get("https://blognub.herokuapp.com/", async (req, res) => {
   const username = req.query.user;
   const catName = req.query.cat;
   try {
