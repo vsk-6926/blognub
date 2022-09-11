@@ -7,7 +7,7 @@ import "./SinglePost.css";
 const SinglePost = () => {
   const PF = "http://localhost:5000/images/";
   const location = useLocation();
-  const path = location.pathname.split("https://blognub.herokuapp.com/")[2];
+  const path = location.pathname.split("/")[2];
   const [post, setPost] = useState({});
   const { user } = useContext(Context);
   const [title, setTitle] = useState("");
@@ -19,7 +19,7 @@ const SinglePost = () => {
       await axios.delete("/posts/" + path, {
         data: { username: user.username },
       });
-      window.location.replace("https://blognub.herokuapp.com/");
+      window.location.replace("/");
     } catch (err) {}
   };
 

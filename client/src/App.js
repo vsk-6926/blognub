@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Topbar />
       <Routes>
-        <Route exact path='https://blognub.herokuapp.com/' element={<Home />} />
+        <Route exact path='/' element={<Home />} />
         <Route path='write' element={user ? <Write /> : <Register />} />
         <Route path='/post/:postId' element={<Single />} />
         <Route path='settings' element={user ? <Settings /> : <Register />} />
